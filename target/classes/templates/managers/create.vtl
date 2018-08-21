@@ -1,0 +1,27 @@
+<!-- create.vtl -->
+
+<h2 class="pageHeader">New manager</h2>
+
+<form action="/managers" method="post">
+    <label for="firstName">First name:</label>
+    <input type="text" class="inputbox" name="firstName" required="true" id="firstName"/>
+
+    <label for="lastName">Last name:</label>
+    <input type="text" class="inputbox" name="lastName" required="true" id="lastName"/>
+
+    <label for="salary">Salary:</label>
+    <input type="text" class="inputbox" name="salary" required="true" id="salary"/>
+
+    <select name="department">
+        #foreach($department in $departments)
+        <option value="$department.getId()">
+            $department.getTitle()
+        </option>
+        #end
+    </select>
+
+    <label for="budget">Budget:</label>
+    <input type="text" class="inputbox" name="budget" required="true" id="budget"/>
+
+    <input type="submit" value="Save" class="button">
+</form>

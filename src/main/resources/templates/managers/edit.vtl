@@ -1,0 +1,29 @@
+<!-- edit.vtl -->
+
+<h2 class="pageHeader">Edit manager details</h2>
+
+<form action="/managers/$manager.getId()" method="post">
+    <label for="firstName">First name:</label>
+    <input type="text" class="inputbox" name="firstName" required="true" value="$manager.getFirstName()" id="firstName"/>
+
+    <label for="lastName">Last name:</label>
+    <input type="text" class="inputbox" name="lastName" required="true" value="$manager.getLastName()" id="lastName"/>
+
+    <label for="salary">Salary:</label>
+    <input type="text" class="inputbox" name="salary" required="true" value="$manager.getSalary()" id="salary"/>
+
+
+    <select name="department">
+        #foreach($department in $departments)
+            <option value="$department.getId()" #if( $manager.getDepartment().getId() == $department.getId()) selected #end>
+                $department.getTitle()
+            </option>
+        #end
+    </select>
+
+    <label for="budget">Budget:</label>
+    <input type="text" class="inputbox" name="budget" required="true" value="$manager.getBudget()" id="budget"/>
+
+
+    <input type="submit" value="Save" class="button">
+</form>

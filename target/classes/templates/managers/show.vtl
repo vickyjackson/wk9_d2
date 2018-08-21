@@ -1,0 +1,25 @@
+<h2 class="pageHeader">Manager $manager.getId()</h2>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Budget</th>
+        <th>Department</th>
+    </tr>
+
+    <tr>
+        <td>$manager.getFirstName()</td>
+        <td>$manager.getLastName()</td>
+        <td>$manager.getBudget()</td>
+        <td>$manager.getDepartment().getTitle()</td>
+        <td><a href="/managers/$manager.getId()/edit">Edit</a></td>
+        <td>
+        <form action="/managers/$manager.getId()/delete" method="post">
+            <input type="submit" value="Delete"/>
+        </form>
+        </td>
+    </tr>
+
+</table><br><br>
+<a href="javascript:history.back()">Go Back</a>
